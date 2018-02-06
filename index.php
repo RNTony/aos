@@ -12,15 +12,15 @@ $retour["Utilisateur"]["nb d'utilisateur"] = count($resultats);
 //var_dump($retour);
 echo json_encode($retour);
 
-/*$requete = $pdo->prepare("SELECT * FROM images");
-$requete->execute();
-$resultats = $requete->fetchAll();
+/*$requete2 = $pdo->prepare("SELECT img_id, img_nom, id_users FROM images");
+$requete2->execute();
+$resultats2 = $requete2->fetchAll();
 
-$retour["images"]["donnee"] = $resultats; 
-$retour["images"]["nb d'imgages"] = count($resultats);
+$retour2["images"]["donnee"] = $resultats2; 
+$retour2["images"]["nb d'imgages"] = count($resultats2);
 
 
-var_dump($retour);
-echo json_encode($retour);
-*/
+//var_dump($retour);
+echo json_encode($retour2);*/
+
 ?>
