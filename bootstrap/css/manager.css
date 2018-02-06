@@ -1,0 +1,44 @@
+
+.pieddepage {
+  background-color : #4D4C4A;
+  text-align : center;
+  color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size : 12px; 
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:40px;
+  width:100%;
+}
+
+
+.contenu {
+  background-color :  #046380;
+}
+
+
+.connexion {
+  text-align : center;
+  height: 100%;
+  width : 100%;
+  background-color : #046380;
+  margin-top : 12%;
+  color :white;
+  text-shadow: 4px 4px 4px #D83F3D;
+}
+body {
+    background-color : #046380;
+
+}
+h1 {
+  text-align: center;
+  color :white;
+  text-shadow: 4px 4px 4px #D83F3D;
+  font-size: 46px;
+}
+.btn {
+  text-align : inline-block;
+  text-align: right;
+}
