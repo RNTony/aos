@@ -27,10 +27,10 @@ $requete->execute();
 $resultats = $requete->fetchAll();
 
 $retour["images"]["donnee"] = $resultats; 
-$retour["images"]["nb d'imgages"] = count($resultats);*/
+$retour["images"]["nb d'imgages"] = count($resultats);
 
 
-//var_dump($retour);
+var_dump($retour);
 echo json_encode($retour);
-
+*/
 ?>
