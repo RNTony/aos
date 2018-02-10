@@ -40,11 +40,11 @@
         if($odata->users_active == 1){
           //Test des droits
           switch($odata->users_role){
-            case 'ADMIN': header("Location: index.php");
+            case 'ADMIN': header("Location: api/users.php");
             exit;
             break;
             
-            case 'USER': header("Location: index.php");
+            case 'USER': header("Location: api/users.php");
             exit;
             break;
             
