@@ -1,6 +1,6 @@
 <?php
   //Activer le gestionnaire de session
-    session_start();
+  session_start();
 
   if (!empty($_POST['submit'])) {
     $login=$_POST['login'];
