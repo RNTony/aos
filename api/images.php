@@ -15,7 +15,33 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
 /*else if ($_SERVER['REQUEST_METHOD'] == "POST") {}
 
-else if ($_SERVER['REQUEST_METHOD'] == "PUT") {}
+else if ($_SERVER['REQUEST_METHOD'] == "PUT") {}*/
 
-else if ($_SERVER['REQUEST_METHOD'] == "DELETE") {}*/
+
+else if ($_SERVER['REQUEST_METHOD'] == "DELETE") {
+	if(isset($_GET['id'])&& !empty( $_GET['id'] )){
+        $id=$_GET['id'];
+
+        //Requete SQL pour supprimer dans la base          
+        $requete = $pdo->prepare("DELETE FROM images WHERE img_id = '$id'");
+		$requete->execute();
+		$resultats = $requete->fetchAll();
+        http_response_code(200);        
+
+        $requete2 = $pdo->prepare("SELECT img_nom, img_id, id_user FROM images");
+		$requete2->execute();
+		$resultats2 = $requete2->fetchAll();
+
+		$retour2["images"]["donnee"] = $resultats2; 
+		$retour2["images"]["nb d'images"] = count($resultats2);
+
+		retour_json(true,'Données images',$retour2);
+        }
+        
+
+    else {
+    	http_response_code(404);
+    	retour_json(false,'ID NON VALIDE');
+    }
+}
 ?>
