@@ -2,7 +2,7 @@
 include '../includes/header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
-        	$requete2 = $pdo->prepare("SELECT comvid_id,comm,id_date,id_friend,id_vid FROM vid_comments");
+        	$requete2 = $pdo->prepare("SELECT * FROM vid_comments");
 			$requete2->execute();
 			$resultats2 = $requete2->fetchAll();
 
