@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 			$requete->execute();
 			$resultats = $requete->fetchAll();
 			$retour["Utilisateur"]["donnee"] = $resultats; 
-			$retour["Utilisateur"]["nb d'utilisateur"] = count($resultats);
+			$retour["nombre d'utilisateur"] = count($resultats);
 
         	retour_json(true,'Donnees utilisateur',$retour);
         	http_response_code(200);
@@ -56,7 +56,7 @@ else if ($_SERVER['REQUEST_METHOD'] == "POST") {
 						$requete->execute();
 						$resultats = $requete->fetchAll();
 						$retour["Utilisateur"]["donnee"] = $resultats; 
-						$retour["Utilisateur"]["nb d'utilisateur"] = count($resultats);
+						$retour["nombre d'utilisateur après ajout"] = count($resultats);
 
 				        http_response_code(200);
 				        retour_json(true,'utilisateur ajouté',$retour);
@@ -100,10 +100,10 @@ else if ($_SERVER['REQUEST_METHOD'] == "PUT") {
 						$requete->execute();
 						$resultats = $requete->fetchAll();
 						$retour["Utilisateur"]["donnee"] = $resultats; 
-						$retour["Utilisateur"]["nb d'utilisateur"] = count($resultats);
+						$retour["nombre d'utilisateur"] = count($resultats);
 
 				        http_response_code(200);
-				        retour_json(true,'utilisateur ajouté',$retour);
+				        retour_json(true,'utilisateur mis à jour',$retour);
                     }
 
 
@@ -140,9 +140,9 @@ else if ($_SERVER['REQUEST_METHOD'] == "DELETE") {
 			$requete->execute();
 			$resultats = $requete->fetchAll();
 			$retour["Utilisateur"]["donnee"] = $resultats; 
-			$retour["Utilisateur"]["nb d'utilisateur"] = count($resultats);
+			$retour["nombre d'utilisateur après DELETE"] = count($resultats);
 
-        	retour_json(true,'Données utilisateur',$retour);
+        	retour_json(true,'Données utilisateur après DELETE',$retour);
         }
     
     else {

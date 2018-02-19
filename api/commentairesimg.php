@@ -6,15 +6,17 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 			$requete2->execute();
 			$resultats2 = $requete2->fetchAll();
 
-			$retour2["coms"]["donnee"] = $resultats2; 
-			$retour2["coms"]["nb de coms"] = count($resultats2);
+			$retour2["commentaire"]["donnee"] = $resultats2; 
+			$retour2["nombre de commentaire"] = count($resultats2);
 
-			retour_json(true,'Donnees coms img',$retour2);
+            retour_json(true,'Voici les donnees des commentaires images',$retour2);
 			http_response_code(200);
 }
 
 
-/*else if ($_SERVER['REQUEST_METHOD'] == "POST") {}
+/*else if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+}
                         
 else if ($_SERVER['REQUEST_METHOD'] == "PUT") {}*/
 
@@ -36,10 +38,10 @@ else if ($_SERVER['REQUEST_METHOD'] == "DELETE") {
 		$requete2->execute();
 		$resultats2 = $requete2->fetchAll();
 
-		$retour2["coms"]["donnee"] = $resultats2; 
-		$retour2["coms"]["nb de coms"] = count($resultats2);
+		$retour2["commentaire"]["donnee"] = $resultats2; 
+		$retour2["nombre de commentaire"] = count($resultats2);
 
-		retour_json(true,'Donnees coms img',$retour2);
+		retour_json(true,'Voici les donnees des commentaires images après DELETE',$retour2);
         }
         
 

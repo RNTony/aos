@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 			$resultats2 = $requete2->fetchAll();
 
 			$retour2["images"]["donnee"] = $resultats2; 
-			$retour2["images"]["nb d'images"] = count($resultats2);
+			$retour2["nombre d'images"] = count($resultats2);
 
 			retour_json(true,'Données images',$retour2);
 			http_response_code(200);
@@ -33,9 +33,9 @@ else if ($_SERVER['REQUEST_METHOD'] == "DELETE") {
 		$resultats2 = $requete2->fetchAll();
 
 		$retour2["images"]["donnee"] = $resultats2; 
-		$retour2["images"]["nb d'images"] = count($resultats2);
+		$retour2["nombre d'images"] = count($resultats2);
 
-		retour_json(true,'Données images',$retour2);
+		retour_json(true,'Données images après DELETE',$retour2);
         }
         
 
