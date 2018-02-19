@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 			$retour["Utilisateur"]["donnee"] = $resultats; 
 			$retour["nombre d'utilisateur"] = count($resultats);
 
-        	retour_json(true,'Donnees utilisateur',$retour);
+        	retour_json(true,'voici les donnees des utilisateurs',$retour);
         	http_response_code(200);
         }
 
@@ -113,7 +113,7 @@ else if ($_SERVER['REQUEST_METHOD'] == "PUT") {
                         }
 	}	
 else {
-                		retour_json(false,"pb id");
+                		retour_json(false,"pb id ! Essayez avec users.php?id=un_id");
                         http_response_code(400);
                         }
 }

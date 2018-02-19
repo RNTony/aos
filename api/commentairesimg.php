@@ -2,7 +2,7 @@
 include '../includes/header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
-        	$requete2 = $pdo->prepare("SELECT comimg_id,comm,id_date,id_friend,id_img FROM img_comments");
+        	$requete2 = $pdo->prepare("SELECT * FROM img_comments");
 			$requete2->execute();
 			$resultats2 = $requete2->fetchAll();
 
@@ -14,11 +14,16 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 }
 
 
-/*else if ($_SERVER['REQUEST_METHOD'] == "POST") {
+else if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            retour_json(false,'La methode POST n est pas disponible ');
+            http_response_code(404);
 
 }
                         
-else if ($_SERVER['REQUEST_METHOD'] == "PUT") {}*/
+else if ($_SERVER['REQUEST_METHOD'] == "PUT") {
+    retour_json(false,'La methode PUT n est pas disponible ');
+            http_response_code(404);
+}
 
 else if ($_SERVER['REQUEST_METHOD'] == "DELETE") {
 	if(isset($_GET['id'])&& !empty($_GET['id'])){

@@ -9,13 +9,21 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 			$retour2["videos"]["donnee"] = $resultats2; 
 			$retour2["nombre de videos"] = count($resultats2);
 
-			retour_json(true,'Donnees videos',$retour2);
+			retour_json(true,'Voici les donnees videos',$retour2);
 			http_response_code(200);
 }
 
-/*else if ($_SERVER['REQUEST_METHOD'] == "POST") {}
+else if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            retour_json(false,'La methode POST n est pas disponible ');
+            http_response_code(404);
 
-else if ($_SERVER['REQUEST_METHOD'] == "PUT") {}*/
+}
+
+else if ($_SERVER['REQUEST_METHOD'] == "PUT") {
+            retour_json(false,'La methode PUT n est pas disponible ');
+            http_response_code(404);
+
+}
 
 else if ($_SERVER['REQUEST_METHOD'] == "DELETE") {
 	if(isset($_GET['id'])&& !empty( $_GET['id'] )){
