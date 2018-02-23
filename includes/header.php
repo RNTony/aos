@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 try { 
-	$pdo = new PDO('mysql:host=localhost;port=3306;dbname=aos','root','');
+	$pdo = new PDO('mysql:host=localhost;port=3306;dbname=aos2','root','');
 }
  catch (Exception $e) {
 				retour_json(false, "Connexion impossible");

@@ -7,8 +7,7 @@ include '../includes/header.php';
 
 //SI LA REQUETE EST UN GET
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
-		
-        	$requete = $pdo->prepare("SELECT * FROM users");
+
 			$requete->execute();
 			$resultats = $requete->fetchAll();
 			$retour["Utilisateur"]["donnee"] = $resultats; 
@@ -17,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
         	retour_json(true,'voici les donnees des utilisateurs',$retour);
         	http_response_code(200);
         }
-
 
 
 

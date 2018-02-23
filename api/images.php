@@ -15,13 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
 else if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	        retour_json(false,'La methode POST n est pas disponible ');
-            http_response_code(404);
+            http_response_code(405);
 
 }
 
 else if ($_SERVER['REQUEST_METHOD'] == "PUT") {
 			retour_json(false,'La methode PUT n est pas disponible ');
-        	http_response_code(404);
+        	http_response_code(405);
 }
 
 
